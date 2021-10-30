@@ -1,6 +1,5 @@
 
 import random
-import sqlite3
 from flask import Flask, request
 from flask.templating import render_template
 from flask_sqlalchemy import SQLAlchemy
