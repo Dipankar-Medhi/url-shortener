@@ -1,0 +1,29 @@
+{% extends 'layout.html' %} {% block title %} Home {% endblock %} {% block body
+%}
+<br />
+<br />
+<form method="post">
+  <input type="url" name="url" placeholder=" Paste url..." class="input" />
+  <button class="button" type="submit">Shorten</button>
+</form>
+
+<div class="shorten">
+  {% if shrt_url%}
+  <p class="shorten-text" id="shrt_url">
+    http://127.0.0.1:5000/sh/{{ shrt_url }}
+  </p>
+
+  <button class="button" onclick="copy()">Copy</button>
+  {% endif %}
+</div>
+
+<script>
+  async function copy() {
+    var copyText = document.getElementById("shrt_url").textContent;
+
+    navigator.clipboard.writeText(copyText);
+    alert("Copied the text: " + copyText);
+  }
+</script>
+
+{% endblock %}
